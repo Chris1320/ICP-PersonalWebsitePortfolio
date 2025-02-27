@@ -1,0 +1,56 @@
+#contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+#form-controls, #form-controls-alt {text-align: center;}
+#form-controls-alt {visibility: hidden;}
+
+#form-controls p, #form-controls-alt p {
+    font-style: italic;
+    font-size: x-small;
+    padding-top: 20px;
+}
+
+#form-controls button, #form-controls-alt button {
+    color: var(--default-nav-color);
+    background-color: var(--default-nav-bg-color);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#link-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 25px;
+}
+
+.link {
+    display: inline-block;
+    text-align: center;
+    padding: 0% 5%;
+    transition: 250ms ease-in-out;
+}
+
+.link:hover {transform: scale(1.1);}
+.link a {text-decoration: none;}
+
+.link img {
+    max-width: 50px;
+    filter: invert();  /* The icons are in black color so let's invert it. */
+}
+
+.form-label-and-input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px 10%;
+    align-items: center;
+}
+
+/* Media queries will be kinda messy because we're running out of time. */
+@media (max-width: 800px) {
+    #contact-form {display: block;}
+    #form-controls {visibility: hidden;}
+    #form-controls-alt {visibility: visible;}
+}

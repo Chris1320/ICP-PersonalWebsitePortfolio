@@ -1,0 +1,207 @@
+/* Load custom fonts */
+@font-face {
+    font-family: "ia_writer_regular";
+    src: url("/www/assets/fonts/iAWriterQuattroS-Regular.woff2") format("woff2"),
+        url("/www/assets/fonts/iAWriterQuattroS-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ia_writer_bold";
+    src: url("/www/assets/fonts/iAWriterQuattroS-Bold.woff2") format("woff2"),
+        url("/www/assets/fonts/iAWriterQuattroS-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "authentic_signature";
+    src: url("/www/assets/fonts/authentic_signature-webfont.woff2") format("woff2"),
+        url("/www/assets/fonts/authentic_signature-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes fade {  /* Make a fade-in animation to be used in images */
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slide-from-left {
+    0% {transform: translateX(-50%);}
+    100% {transform: translateX(0%);}
+}
+
+:root {
+    /* Put the palette here so that it's easy to change colors in the future. */
+    --default-text-color: #cad2c5;
+    --default-bg-color: #2f3e46;
+    --default-header-bg-color: #52796f;
+    --default-nav-color: #25292a;
+    --default-nav-bg-color: #84a98c;
+    --default-border-color: #25292a;
+    --default-anchor-underline-color: #52796F;
+    --default-input-bg-color: #354F52;
+    --default-input-outline-color: #84a98c;
+    --default-input-placeholder-color: #52796F;
+}
+
+::placeholder {color: var(--default-input-placeholder-color);}
+
+* {
+    font-family: "ia_writer_regular", sans-serif;
+    color: var(--default-text-color);
+}
+
+body {
+    background-color: var(--default-bg-color);
+    margin: 0%;
+}
+
+header {
+    background-color: var(--default-header-bg-color);
+
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 5px;
+
+    /* Override header's z-index to prevent images from overlapping the header. */
+    z-index: 1;
+}
+
+header > nav ul > li {
+    display: inline-block;
+    list-style: none;
+}
+
+header > nav ul > li > a {
+    text-decoration: none;
+    color: var(--default-nav-color); /* inherit the parent's color. */
+    background-color: var(--default-nav-bg-color);
+
+    margin: 0px 20px;
+    padding: 10px 20px;
+    align-items: center;
+
+    border: 1px solid var(--default-border-color);
+    border-radius: 25px;
+    transition: 250ms ease-in-out;
+}
+
+header > nav ul > li > a:hover {
+    margin: 1px 25px;
+    padding: 11px 25px;
+    border-radius: scale(1.1);
+
+    transition: 250ms ease-in-out;
+}
+
+main {
+    padding-top: 200px;
+    margin: 50px;
+    animation: fade 1s ease-out;  /* Fade in all elements in main tags */
+}
+
+input, textarea, button {
+    background-color: var(--default-input-bg-color);
+    border: 1px solid var(--default-border-color);
+    border-radius: 10px;
+    margin: 2px 5px;
+    padding: 5px;
+    transform: scale(1);
+    transition: 100ms ease-in-out;
+}
+
+button {
+    /* These attributes fix the text not being aligned with the icon. */
+    display: inline-flex;
+    align-items: center;
+    vertical-align: bottom;
+}
+
+input[type=submit]:hover, button[type=submit]:hover, button[type=reset]:hover {
+    outline: var(--default-input-outline-color);
+    outline-style: solid;
+    outline-width: 2px;
+    transform: scale(1.05);
+    transition: 100ms ease-in-out;
+}
+
+textarea {
+    resize: none;
+    width: 100%;  /* Occupy its whole div container. */
+    /* overflow: hidden;  // This hides the scrollbar but disables scrolling completely. */
+}
+
+input:focus, textarea:focus, button[type=submit]:focus, button[type=reset]:focus {
+    outline: var(--default-input-outline-color);
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+footer a {text-decoration: none;}
+footer hr {
+    border-style: solid;
+    border-color: var(--default-border-color);
+    margin: 0% 2.5%;  /* Do not make it go to the sides */
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: x-small;
+    font-style: italic;
+    margin: 0%;
+}
+
+/* Wrapper for the header, main, and footer elements. */
+#wrapper {display: block;}
+
+#header-title {
+    font-family: "ia_writer_bold", sans-serif;
+    font-size: 42pt;
+    transition: font-size 0.5s ease;
+}
+
+#header-title.hidden {
+    font-size: 0pt;
+    transition: font-size 0.5s ease;
+}
+
+.image-animate-left {
+    opacity: 1;
+    animation: fade 2s ease-in-out, slide-from-left 1s ease-out;
+}
+
+.material-symbols-rounded {
+    display: inline-flex;
+    vertical-align: bottom;  /* ? For some reason, bottom is MORE CENTER than middle... */
+    padding-right: 5px;
+}
+
+.required-field {
+    color: var(--default-text-color);
+    font-style: italic;
+    font-size: xx-small;
+}
+
+/* Media queries will be kinda messy because we're running out of time. */
+@media (max-width: 800px) {
+    header {position: relative;}
+    header > nav ul > li {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    main {padding-top: initial;}
+    #header-title {font-size: 25pt;}
+}

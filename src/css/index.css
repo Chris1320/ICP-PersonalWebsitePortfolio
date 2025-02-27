@@ -1,0 +1,16 @@
+#home-intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#home-intro a {
+    text-decoration: underline;
+    text-decoration-color: var(--default-anchor-underline-color);
+}
+
+#home-intro img {
+    border: 5px solid var(--default-border-color);
+    border-radius: 15px;
+    margin-right: 25px;
+}

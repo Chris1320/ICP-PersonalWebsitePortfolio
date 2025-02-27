@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Christopher Andrei Tayao</title>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/contact.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script type="text/javascript" src="/js/header-scroll.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1 id="header-title">Christopher Andrei Tayao</h1>
+                <nav id="header-nav">
+                    <ul>
+                        <li><a href="/index.html"><span class="material-symbols-rounded">home</span>Home</a></li>
+                        <li><a href="/about.html"><span class="material-symbols-rounded">info</span>About</a></li>
+                        <li><a href="/gallery.php"><span class="material-symbols-rounded">photo_library</span>Gallery</a></li>
+                        <li><a href="/contact.html"><span class="material-symbols-rounded">contact_mail</span>Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <h2>Contact Me</h2>
+                <p>You can contact me on the following platforms:</p>
+                <div id="link-list">
+                    <div class="link">
+                        <a href="mailto:christopherandreitayao@baliuagu.edu.ph" target="_blank">
+                            <img src="/assets/images/icons/mail.png" alt="Email">
+                            <p>Email</p>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a href="https:/github.com/Chris1320/" target="_blank">
+                            <img src="/assets/images/icons/github.png" alt="GitHub">
+                            <p>GitHub</p>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://matrix.to/#/@chris1320:matrix.org" target="_blank">
+                            <img src="/assets/images/icons/matrix.png" alt="Matrix">
+                            <p>Matrix</p>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://discordapp.com/users/chris.from.nowhere" target="_blank">
+                            <img src="/assets/images/icons/discord.png" alt="Discord">
+                            <p>Discord</p>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://gitlab.com/Chris1320" target="_blank">
+                            <img src="/assets/images/icons/gitlab.png" alt="GitLab">
+                            <p>GitLab</p>
+                        </a>
+                    </div>
+                </div>
+                <p>If you don't have any of the above, you can directly contact me by filling out the form below:</p>
+                <form action="contact-submit.php" method="POST">
+                    <div id="contact-form">
+                        <div>
+                            <div class="form-label-and-input">
+                                <label for="name">Name<sup class="required-field">*</sup></label>
+                                <input type="text" name="name" id="name" required>
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email">
+                            </div>
+                            <div id="form-controls">
+                                <p>All fields with an asterisk (*) are required.</p>
+                                <!-- ? Let's use a button element instead so that we can use icons. -->
+                                <!-- <input type="submit" value="Send Message" id="form-submit"> -->
+                                <button type="reset"><span class="material-symbols-rounded">undo</span> Reset</button>
+                                <button type="submit"><span class="material-symbols-rounded">send</span> Send Message</button>
+                            </div>
+                        </div>
+                        <div id="form-message-box">
+                            <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Enter your message here..." required></textarea>
+                        </div>
+                        <div id="form-controls-alt">
+                            <p>All fields with an asterisk (*) are required.</p>
+                            <!-- ? Let's use a button element instead so that we can use icons. -->
+                            <!-- <input type="submit" value="Send Message" id="form-submit"> -->
+                            <button type="reset"><span class="material-symbols-rounded">undo</span> Reset</button>
+                            <button type="submit"><span class="material-symbols-rounded">send</span> Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+            <footer>
+                <hr />
+                <p>Copyright &copy; 2023 by <a href="mailto:christopherandreitayao@baliuagu.edu.ph">Christopher Andrei Tayao</a></p>
+                <p>Icons from <a href="https://fonts.google.com/icons?selected=Material+Icons">Google Fonts</a> and <a href="https:/.flaticon.com/">Flaticon</a></p>
+            </footer>
+        </div>
+    </body>
+</html>
